@@ -18,14 +18,14 @@ export default function GalleryPage({ items }) {
           <h1>Curated photo collections</h1>
           <p>Browse a static gallery experience powered by Next.js and generated at build time.</p>
         </div>
-        <Link href="/" className="btn btn-outline">
+        <Link href="../" className="btn btn-outline">
           Back home
         </Link>
       </section>
 
       <div className="gallery-grid">
         {items.map((item) => (
-          <Link key={item.slug} href={`/gallery/${item.slug}`} className="gallery-card">
+          <Link key={item.slug} href={item.slug} className="gallery-card">
             <div className="card-image" style={{ backgroundImage: `url(${item.image})` }} />
             <div className="card-content">
               <p className="card-category">{item.category}</p>

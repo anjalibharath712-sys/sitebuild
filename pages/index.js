@@ -10,7 +10,7 @@ export default function Home() {
           <h1>Elegant gallery pages built with Next.js</h1>
           <p>Create a fully static gallery website with fast load times and beautiful visuals.</p>
           <div className="hero-actions">
-            <Link href="/gallery" className="btn btn-primary">
+            <Link href="gallery" className="btn btn-primary">
               View Gallery
             </Link>
             <a href="#preview" className="btn btn-secondary">
@@ -36,7 +36,7 @@ export default function Home() {
 
         <div className="gallery-grid">
           {gallery.slice(0, 4).map((item) => (
-            <Link key={item.slug} href={`/gallery/${item.slug}`} className="gallery-card">
+            <Link key={item.slug} href={item.slug} className="gallery-card">
               <div className="card-image" style={{ backgroundImage: `url(${item.image})` }} />
               <div className="card-content">
                 <p className="card-category">{item.category}</p>

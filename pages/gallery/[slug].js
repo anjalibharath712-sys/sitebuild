@@ -25,7 +25,7 @@ export default function GalleryItem({ item }) {
           <p className="eyebrow">{item.category}</p>
           <h1>{item.title}</h1>
           <p>{item.description}</p>
-          <Link href="/gallery" className="btn btn-secondary">
+          <Link href="../" className="btn btn-secondary">
             Back to gallery
           </Link>
         </div>
