@@ -1,0 +1,13 @@
+title: SiteBuild Gallery
+description: A modern static gallery created with Jekyll.
+baseurl: "/sitebuild"
+url: ""
+theme: null
+
+plugins: []
+
+markdown: kramdown
+
+exclude:
+  - Gemfile.lock
+  - node_modules
