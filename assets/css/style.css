@@ -1,11 +1,33 @@
+/* ============================================================================
+   EDUKRON LANDING PAGE - Complete Style System
+   ============================================================================
+   Design System:  Modern, minimalist, AI-focused learning platform
+   Color Palette: Blue primary, accent colors for semantic meaning
+   Typography: Plus Jakarta Sans (body), Fraunces (display/headings)
+   Framework: CSS Grid, Flexbox, CSS Variables
+   
+   DOCUMENTATION:
+   - All sections clearly marked with commented headers
+   - CSS Variables organized by color and purpose
+   - Responsive breakpoints at 960px and 600px
+   - Interactive states for all components
+   ============================================================================ */
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* COLOR SYSTEM & DESIGN TOKENS */
 :root{
+  /* Blue Color Scale - Primary Brand Color */
   --blue-50:#eff6ff;--blue-100:#dbeafe;--blue-200:#bfdbfe;--blue-300:#93c5fd;
   --blue-400:#60a5fa;--blue-500:#3b82f6;--blue-600:#2563eb;--blue-700:#1d4ed8;
   --blue-800:#1e40af;--blue-900:#1e3a8a;--blue-950:#172554;
+  
+  /* Neutral Palette */
   --ink:#0d1b4b;--white:#ffffff;
   --gray-50:#f8faff;--gray-100:#f0f4ff;--gray-200:#e2e8f8;
   --gray-400:#94a3b8;--gray-600:#4b5980;--gray-700:#334155;
+  
+  /* Semantic Colors */
   --accent:#f59e0b;--accent-light:#fef3c7;
   --green:#10b981;--green-light:#d1fae5;
   --rose:#ef4444;--rose-light:#fee2e2;
