@@ -6,15 +6,21 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="description" content="{{ site.description }}">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  <link rel="icon" href="{{ site.baseurl }}/assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      <div class="logo">
+        <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+      </div>
       <nav class="main-nav">
         <a href="{{ site.baseurl }}/">Home</a>
-        <a href="{{ site.baseurl }}/gallery/">Gallery</a>
+        <a href="{{ site.baseurl }}/about/">About</a>
+        <a href="{{ site.baseurl }}/courses/">Courses</a>
+        <a href="{{ site.baseurl }}/contact/">Contact</a>
       </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
     </div>
   </header>
 
@@ -24,8 +30,29 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. Built with Jekyll for GitHub Pages.</p>
+      <div class="footer-section">
+        <h3>{{ site.title }}</h3>
+        <p>Empowering careers through quality education and training.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="{{ site.baseurl }}/">Home</a></li>
+          <li><a href="{{ site.baseurl }}/about/">About Us</a></li>
+          <li><a href="{{ site.baseurl }}/courses/">Courses</a></li>
+          <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p>📧 info@edukron.com</p>
+        <p>📞 +1 (555) 123-4567</p>
+        <p>📍 123 Education St, Learning City, LC 12345</p>
+      </div>
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="{{ site.baseurl }}/assets/js/script.js"></script>
 </body>
 </html>
