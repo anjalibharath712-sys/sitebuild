@@ -1,58 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="description" content="{{ site.description }}">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-  <link rel="icon" href="{{ site.baseurl }}/assets/favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title | default: site.title }}</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">
-        <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-      </div>
-      <nav class="main-nav">
-        <a href="{{ site.baseurl }}/">Home</a>
-        <a href="{{ site.baseurl }}/about/">About</a>
-        <a href="{{ site.baseurl }}/courses/">Courses</a>
-        <a href="{{ site.baseurl }}/contact/">Contact</a>
-      </nav>
-      <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+
+<!-- NAV -->
+<nav>
+  <a href="{{ '/' | relative_url }}" class="logo">Edu<span>kron</span></a>
+  <ul class="nav-links">
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#instructors">Instructors</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#" class="btn-outline">Log in</a>
+    <a href="#" class="btn-solid">Start free →</a>
+  </div>
+</nav>
+
+{{ content }}
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a href="{{ '/' | relative_url }}" class="ft-logo">Edu<span>kron</span></a>
+    <p class="ft-tag">Learn beyond limits. Build skills that matter. Launch a career you love.</p>
+    <div class="social-row">
+      <a href="#" class="soc">𝕏</a>
+      <a href="#" class="soc">in</a>
+      <a href="#" class="soc">yt</a>
+      <a href="#" class="soc">ig</a>
     </div>
-  </header>
-
-  <main class="site-content">
-    {{ content }}
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-section">
-        <h3>{{ site.title }}</h3>
-        <p>Empowering careers through quality education and training.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="{{ site.baseurl }}/">Home</a></li>
-          <li><a href="{{ site.baseurl }}/about/">About Us</a></li>
-          <li><a href="{{ site.baseurl }}/courses/">Courses</a></li>
-          <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Contact Info</h4>
-        <p>📧 info@edukron.com</p>
-        <p>📞 +1 (555) 123-4567</p>
-        <p>📍 123 Education St, Learning City, LC 12345</p>
-      </div>
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+  </div>
+  <div class="ft-col">
+    <h4>Learn</h4>
+    <ul class="ft-links">
+      <li><a href="#">All courses</a></li>
+      <li><a href="#">Learning paths</a></li>
+      <li><a href="#">Certifications</a></li>
+      <li><a href="#">Live classes</a></li>
+      <li><a href="#">Free resources</a></li>
+    </ul>
+  </div>
+  <div class="ft-col">
+    <h4>Company</h4>
+    <ul class="ft-links">
+      <li><a href="#">About Edukron</a></li>
+      <li><a href="#">Instructors</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Press kit</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </div>
+  <div class="ft-col">
+    <h4>For business</h4>
+    <ul class="ft-links">
+      <li><a href="#">Enterprise</a></li>
+      <li><a href="#">Become an instructor</a></li>
+      <li><a href="#">Hiring partners</a></li>
+      <li><a href="#">API &amp; integrations</a></li>
+    </ul>
+  </div>
+  <div class="ft-col">
+    <h4>Support</h4>
+    <ul class="ft-links">
+      <li><a href="#">Help centre</a></li>
+      <li><a href="#">Community forum</a></li>
+      <li><a href="#">Contact us</a></li>
+      <li><a href="#">System status</a></li>
+    </ul>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2026 Edukron Technologies Pvt. Ltd. · Made in Bengaluru 🇮🇳</span>
+    <div class="ft-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Cookie Settings</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+<script>
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on');
+  });
+});
+</script>
 </body>
 </html>

@@ -1,13 +1,6 @@
-title: Edukron Training Institute
-description: Professional training institute offering comprehensive courses in technology, business, and personal development.
+title: "Edukron — Learn Beyond Limits"
+description: "Learn skills that actually land real jobs with AI-powered mentorship and expert-led courses."
 baseurl: "/sitebuild"
 url: ""
-theme: null
-
-plugins: []
-
-markdown: kramdown
-
-exclude:
-  - Gemfile.lock
-  - node_modules
+plugins:
+  - jekyll-feed
